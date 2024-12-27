@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>Rice Leaf Diseases Prediction</h1>
+            <p>Silahkan unggah foto padi yang ingin Anda deteksi jenis penyakitnya</p>
+        </div>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <!-- Input file yang tersembunyi -->
+            <input type="file" name="file" accept="image/*" id="file-input" style="display:none;" required>
+            
+            <!-- Gambar sebagai tombol untuk memilih file -->
+            <label for="file-input">
+                <img id="upload-image" src="{{ url_for('static', filename='images/Form.svg') }}" alt="Upload Image" style="cursor:pointer;">
+            </label>
+            <!-- Submit button (tetap disembunyikan) -->
+            <button type="submit" >Prediksi</button>
+        </form>
+        <!-- Gambar berada di paling kanan -->
+        <div class="gambar">
+            <img src="{{ url_for('static', filename='images/Padi.svg') }}" alt="Gambar Padi">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
