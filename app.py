@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
 model = load_model('model_padi.h5')  
-class_labels = {0: "LeafSmut", 1: "Brownspot", 2: "Bacterialblight"}  
+class_labels = {0: "Bacterialblight", 1: "Brownspot", 2: "LeafSmut"}  
 
 @app.route('/')
 def index():
